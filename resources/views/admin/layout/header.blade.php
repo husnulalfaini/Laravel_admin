@@ -69,7 +69,7 @@
                     </span>
                 </a>
                     <a class="dropdown-item media bg-flat-color-3" href="#">
-                    <span class="photo media-left"><img alt="avatar"src="{{ asset('public/images/avatar/4.jpg')}}"></span>
+                    <span class="photo media-left"><img alt="avatar" src="{{ asset('public/images/avatar/4.jpg')}}"></span>
                     <span class="message media-body">
                         <span class="name float-left">Rachel Santos</span>
                         <span class="time float-right">15 minutes ago</span>
@@ -94,7 +94,15 @@
 
                 <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
-                <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                <a class="nav-link" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    <i class="fa fa-power-off"></i> Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+
             </div>
         </div>
 
