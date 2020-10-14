@@ -24,4 +24,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
     route::get('/', 'Admin\DashboardController@index');
     route::resource('/kategori', 'Admin\KategoriController');
+    route::resource('/tugas', 'Admin\TugasController');
 });
